@@ -1,0 +1,65 @@
+\documentclass[a4paper]{article}
+\input{tchead}
+\title{Classical Dynamics}
+\author{C.M.T. Clifton \\ \small based on lectures by Dr D.A. Green}
+\date{Michaelmas \& Lent Terms 2017-18}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Newtonian mechanics and frames of reference}
+\subsection{Newtonian mechanics}
+Mechanics encompasses statics, kinematics and dynamics.
+
+Newtonian mechanics is non-relativistic ($v \ll c$) and classical ($E t \gg \hbar$). We assume that mass is independent of velocity, time or frame; that measurements of time and length are independent of the frame, and that all parameters can be known precisely.
+
+\subsection{Newton's laws of motion}
+\begin{law}[Newton's First Law of Motion]
+  A body remains at rest, or moves uniformly in a straight line, unless acted on by a force. (This is in fact Galileo's Law of Inertia)
+\end{law} 
+
+\begin{law}[Newton's Second Law of Motion]
+   The rate of change of momentum of a body is equal to the force acting on it (in both magnitude and direction).
+\end{law} 
+
+\begin{law}[Newton's Third Law of Motion]
+  To every action there is an equal and opposite reaction: the forces of two bodies on each other are equal and in opposite directions.
+\end{law}
+
+The first law might seem redundant given the second if interpreted literally. According to the second law, if there is no force, then the momentum doesn't change. Hence the body remains at rest or moves uniformly in a straight line.
+
+So why do we have the first law? Historically, it might be there to explicitly counter Aristotle's idea that objects naturally slow down to rest. However, some (modern) physicists give it an alternative interpretation:
+
+Note that the first law isn't always true. Take yourself as a frame of reference. When you move around your room, things will seem like they are moving around (relative to you). When you sit down, they stop moving. However, in reality, they've always been sitting there still. On second thought, this is because you, the frame of reference, is accelerating, not the objects. The first law only holds in frames that are themselves not accelerating. We call these \emph{inertial frames}.
+\begin{defi}[Inertial frames]
+  \emph{Inertial frames} are frames of references in which the frames themselves are not accelerating. Newton's Laws only hold in inertial frames.
+\end{defi}
+Then we can take the first law to assert that inertial frames exists. Even though the Earth itself is rotating and orbiting the sun, for most purposes, any fixed place on the Earth counts as an inertial frame.
+
+\subsection{The simple harmonic oscillator}
+Suppose we have a mass $m$ moving in one dimension with coordinate $x$ subject to restoring force $F = -kx$. We can write down the Newtonian equation of motion using the second law:
+$$m\ddot{x} = -kx.$$
+
+Note that we can integrate the equation of motion to get a conserved quantity -- the total energy, $E$.
+\begin{align*}
+  m\ddot{x} + kx &= 0 \\
+  m\ddot{x}\dot{x} + kx\dot{x} &= 0 \\
+  \frac{1}{2} m\dot{x}^2 + \frac{1}{2} kx^2 &= E \tag{$*$}
+\end{align*}
+
+From $(*)$ we can identify the kinetic and potential engergies, $T \equiv  \frac{1}{2} m\dot{x}^2$ and $V \equiv \frac{1}{2} kx^2$ respectively. Note that the total energy $E = T + V$ is conserved. This conserved quantiy is also known as the Hamiltonian.
+
+In common with many other dynamical systems, $t$ does not appear explicitly in the equation of motion.
+
+\subsection{The energy method}
+
+
+\section{Orbits}
+\section{Rigid body dynamics}
+\section{Introduction to Lagrangian mechanics}
+\section{Normal modes}
+\section{Elasticity}
+\section{Fluid dynamics}
+\end{document}
