@@ -1,4 +1,14 @@
 \usepackage{tcbase}
+
+\begingroup
+    \makeatletter
+    \@for\theoremstyle:=definition,remark,plain\do{%
+        \expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{%
+            \addtolength\thm@preskip\parskip
+            }%
+        }
+\endgroup
+
 \theoremstyle{definition}
 \newtheorem*{aim}{Aim}
 \newtheorem*{axiom}{Axiom}
