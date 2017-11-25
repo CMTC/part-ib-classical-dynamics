@@ -9,13 +9,13 @@
 \tableofcontents
 \newpage
 
-\section{Newtonian mechanics and frames of reference}
-\subsection{Newtonian mechanics}
+\section{Newtonian mechanics and frames of reference}\label{sec:newtonian-mechanics-and-frames-of-reference}
+\subsection{Newtonian mechanics}\label{sec:newtonian-mechanics}
 Mechanics encompasses statics, kinematics and dynamics.
 
 Newtonian mechanics is non-relativistic ($v \ll c$) and classical ($E t \gg \hbar$). We assume that mass is independent of velocity, time or frame; that measurements of time and length are independent of the frame, and that all parameters can be known precisely.
 
-\subsection{Newton's laws of motion}
+\subsection{Newton's laws of motion}\label{sec:newton's-laws-of-motion}
 \begin{law}[Newton's First Law of Motion]
   A body remains at rest, or moves uniformly in a straight line, unless acted on by a force. (This is in fact Galileo's Law of Inertia)
 \end{law} 
@@ -38,7 +38,7 @@ Note that the first law isn't always true. Take yourself as a frame of reference
 \end{defi}
 Then we can take the first law to assert that inertial frames exists. Even though the Earth itself is rotating and orbiting the sun, for most purposes, any fixed place on the Earth counts as an inertial frame.
 
-\subsection{The simple harmonic oscillator}
+\subsection{The simple harmonic oscillator}\label{sec:the-simple-harmonic-oscillator}
 Suppose we have a mass $m$ moving in one dimension with coordinate $x$ subject to restoring force $F = -kx$. We can write down the Newtonian equation of motion using the second law:
 $$m\ddot{x} = -kx.$$
 
@@ -53,13 +53,19 @@ From $(*)$ we can identify the kinetic and potential engergies, $T \equiv  \frac
 
 In common with many other dynamical systems, $t$ does not appear explicitly in the equation of motion.
 
-\subsection{The energy method}
+\subsection{The energy method}\label{sec:the-energy-method}
+If, from physical grounds, we know that energy is conserved, then we can always derive the equations of motion of systems that only have one degree of freedom (such as the SHO) from the expressions for their kinetic and potential energies. We call this the \emph{energy method}. (Note that in the case of the SHO, we use the fact that $\dot{x}$ is not always zero)
 
+Sometimes we can derive the equations of motion of much more complicated systems with $n$ degrees of freedom in a similar manner, however it is not rigorous. Despite this, it works for most of the systems studied in this course.
 
-\section{Orbits}
-\section{Rigid body dynamics}
-\section{Introduction to Lagrangian mechanics}
-\section{Normal modes}
-\section{Elasticity}
-\section{Fluid dynamics}
+The more theoretically advanced methods of Lagrangian and Hamiltonian mechanics derive the equations of motion from a variational principle (see § \ref{sec:introduction-to-lagrangian-mechanics}). They are rigorous, but still use $T$ and $V$ (although in the combination $\mathcal{L} = T - V$).
+
+In § \ref{sec:orbits} the energy method will be used to derive the equation of motion of a particle at radius $r$ in a central force.
+
+\section{Orbits}\label{sec:orbits}
+\section{Rigid body dynamics}\label{sec:rigid-body-dynamics}
+\section{Introduction to Lagrangian mechanics}\label{sec:introduction-to-lagrangian-mechanics}
+\section{Normal modes}\label{sec:normal-modes}
+\section{Elasticity}\label{sec:elasticity}
+\section{Fluid dynamics}\label{sec:fluid-dynamics}
 \end{document}
