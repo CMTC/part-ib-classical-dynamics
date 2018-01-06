@@ -1,13 +1,13 @@
 \usepackage{tcbase}
 
-\begingroup
-    \makeatletter
-    \@for\theoremstyle:=definition,remark,plain\do{%
-        \expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{%
-            \addtolength\thm@preskip\parskip
-            }%
-        }
-\endgroup
+% \begingroup
+%     \makeatletter
+%     \@for\theoremstyle:=definition,remark,plain\do{%
+%         \expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{%
+%             \addtolength\thm@preskip\parskip
+%             }%
+%         }
+% \endgroup
 
 \theoremstyle{definition}
 \newtheorem*{aim}{Aim}
@@ -38,3 +38,4 @@
 \newtheorem{ncor}[nthm]{Corollary}
 
 \renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\renewcommand{\d}{\mathrm{d}}

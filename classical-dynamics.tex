@@ -103,13 +103,51 @@ In § \ref{sec:orbits} the energy method will be used to derive the equation of 
 \end{eg}
 
 \subsection{Dynamics of many-particle systems}
-For a system of $n$ particles, the $i$th has mass $m_i$, position $\vec{r}_i$ and velocity $\vec{v}_i$. It experiences an external force $\vec{F}_{i,0}$ and internal forces $\vec{F}_{i,j}$ as a result of other particles $j$.
+For a system of $n$ particles, the $i$th has mass $m_i$, position $\vec{r}_i$ and velocity $\vec{v}_i$. It experiences an external force $\vec{f}_{i}$ and internal forces $\vec{f}_{i,j}$ as a result of other particles $j$.
 
-\begin{defi}[centre of mass]
-  The centre of mass of a system, $\vec{R}$, is defined by $$\vec{R} = \frac{1}{M}\sum_im_i\vec{r}_i$$ where $M=\sum_im_i$ is the total mass of the system. The motion of the system as a result of an external force can be thought of as acting at the centre of mass. 
+\begin{defi}[total mass]
+  The \emph{total mass} of the system is $$M = \sum_i m_i$$
 \end{defi}
 
-The total external force $\vec{F}_0$ and couple $\vec{G}_0$ influence the total linear and angular momenta $\vec{P}$ and $\vec{J}$ respectively. We denote the kinetic, potential and total energies of the system $T$, $U$ and $E$ respectively.
+\begin{defi}[centre of mass]
+  The \emph{centre of mass} of the system, $\vec{R}$, is defined by $$\vec{R} = \frac{1}{M}\sum_im_i\vec{r}_i$$ The motion of the system as a result of an external force can be thought of as acting at the centre of mass.
+\end{defi}
+
+\begin{defi}[total momentum]
+  The \emph{total momentum} of the system is $$\vec{P} = \sum_i m_i \dot{\vec{r}}_i = \sum_i \vec{p}_i$$ 
+\end{defi}
+
+\begin{defi}[total angular momentum about the origin]
+  The \emph{total angular momentum about the origin} is $$ \vec{J}_{\textrm{O}} = \sum_i \big(\vec{r}_i\times\big(m_i\dot{\vec{r}}_i\big)\big) = \sum_i \big(\vec{r}_i\times \vec{p}_i \big)$$
+\end{defi}
+
+\begin{defi}[total angular momentum about the origin]
+  The \emph{total angular momentum about the origin} is $$\vec{J}_{\textrm{CM}} = \sum_i \big( \big(\vec{r}_i - \vec{R} \big) \times \big(m_i \dot{\vec{r}}_i\big) \big) = \sum_i \big( \big(\vec{r}_i - \vec{R} \big) \times \vec{p}_i \big)$$
+\end{defi}
+
+\begin{defi}[total force]
+  The \emph{total force} acting on the system is $$\vec{F} = \sum_i \vec{f}_i$$
+\end{defi}
+
+\begin{defi}[total couple acting about the centre of mass]
+  The \emph{total couple acting about the centre of mass} is $$\vec{G}_{\textrm{CM}}\equiv \sum_i \big(\vec{r}_i \times \vec{f}_i\big)$$
+\end{defi}
+
+Now we state and prove the rotational variant of Newton's second law.
+
+\begin{thm}[Newton's second law (rotational version)]
+  $$\dot{\vec{J}}_{\textrm{O}} = \vec{G}_{\textrm{O}}$$
+\end{thm}
+\begin{proof}
+  \begin{align*}
+    \dot{\vec{J}}_{\textrm{O}} &= \sum_i \big( \dot{\vec{r}}_i \times \vec{p}_i + \vec{r}_i \times \dot{\vec{p}}_i \big) \\
+                                &= \sum_i \big( \vec{r}_i \times \vec{f}_i \big) + \sum_i \sum_j \big( \vec{r}_i \times \vec{f}_{i,j} \big) \\
+                                &= \vec{G}_{\textrm{O}} + \frac{1}{2} \sum_i \sum_j \big( \big( \vec{r}_i - \vec{r}_j \big) \times \vec{f}_{i,j} \big) \\
+                                &= \vec{G}_{\textrm{O}}
+  \end{align*}
+\end{proof}
+
+We denote the kinetic, potential and total energies of the system $T$, $U$ and $E$ respectively. Note that $T$ is composed of rotational and linear parts.
 
 \subsection{Galilean transformations}
 Inertial frames are not unique. If $S$ is an inertial frame, then any other frame $S'$ moving at constant velocity $\vec{v}$ relative to $S$ is also an inertial frame. Provided the frames coincide at $t=0$, we have
@@ -128,12 +166,17 @@ This a Galilean transformation or boost. In general a Galilean transformation co
   \item in whichever direction we face
   \item at whatever constant velocity we move
   \end{itemize}
-
   So the equations of Newtonian physics must have \emph{Galilean invariance}.
 \end{law}
 Motion (velocity) is not absolute, it is only relative. However acceleration is absolute.
 
+\subsection{Frames in relative motion}
+Suppose we have frame $S$ in which $m\ddot{r}=F$, with $F$ known due to physical causes. What is the apparent equation of motion in a moving frame $S'$?
+
+
+
 \subsection{Rotating frames}
+
 
 % TO DO:
 
@@ -145,6 +188,40 @@ Motion (velocity) is not absolute, it is only relative. However acceleration is 
 \subsection{Kepler's Laws}
 \section{Rigid body dynamics}\label{sec:rigid-body-dynamics}
 \section{Introduction to Lagrangian mechanics}\label{sec:introduction-to-lagrangian-mechanics}
+So far, we have methods that work provided we only have one degree of freedom. In the case that we have more than one, we need a new method.
+\begin{eg}[free particle]
+  \begin{align*}
+    V &= 0 \\
+    T &= \frac{m (\dot{\vec{r}}_i \dot{\vec{r}}_i)}{2} \\
+    E &= T + V \\
+    \dot{E} &= m \dot{\vec{r}}_i \ddot{\vec{r}}_i = 0
+  \end{align*}
+  This gives us 3 equations.
+\end{eg}
+
+Consider Newton II: in both the rotational and linear cases, it equates a ``force'' to the rate of change of a ``momentum''. It makes sense\footnote{We do not derive this here. (yet\dots)} that we can invent generalised ``forces'', similarly related to generalised ``momenta''. This is exploited by Lagrangian mechanics.
+
+\begin{defi}[Lagrangian]
+  A \emph{Lagrangian}, $\mathcal{L}$, is a function of a generalised coordinate $q$, evolving with $t$ such that
+  $$\mathcal{L}(\vec{q}, \dot{\vec{q}}, t) = T - V$$
+  where $T$ is the kinetic energy measured in an inertial frame, and $V$ is the potential energy.
+\end{defi}
+
+We then can then define a conjugate momentum $\vec{p}_i = \frac{\partial\mathcal{L}}{\partial\dot{\vec{q}}_i}$. As per our earlier discussion, we have an equivalent to Newton II:
+$$\dot{\vec{p}}_i = \frac{\partial\mathcal{L}}{\partial\vec{q}_i}$$
+We call this the \emph{Euler-Lagrange} equation.
+
+\begin{eg}[free particle (again)]
+  \begin{align*}
+    T &= \frac{m(\dot{\vec{r}}_i\dot{\vec{r}}_i)}{2} \\
+    V &= 0 \\
+    \mathcal{L} &= T - V \\
+    \vec{p}_i &= \frac{\partial \mathcal{L}}{\partial \dot{\vec{r}}_i} = m \dot{\vec{r}}_i \\
+    \dot{\vec{p}}_i &= \frac{\partial \mathcal{L}}{\partial \vec{r}_i} = 0 \\
+    \implies m \dot{\vec{r}}_i &= \textrm{const.}
+  \end{align*}
+\end{eg}
+
 \section{Normal modes}\label{sec:normal-modes}
 \section{Elasticity}\label{sec:elasticity}
 \section{Fluid dynamics}\label{sec:fluid-dynamics}
