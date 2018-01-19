@@ -170,12 +170,43 @@ This a Galilean transformation or boost. In general a Galilean transformation co
 \end{law}
 Motion (velocity) is not absolute, it is only relative. However acceleration is absolute.
 
-\subsection{Frames in relative motion}
-Suppose we have frame $S$ in which $m\ddot{r}=F$, with $F$ known due to physical causes. What is the apparent equation of motion in a moving frame $S'$?
+\subsection{Frames in relative motion}%COME UP WITH BETTER TITLE!
+Suppose we have frame $S$ in which $m\ddot{\vec{r}}=\vec{F}$, with $\vec{F}$ known due to physical causes. What is the apparent equation of motion in a moving frame $S'$?
 
+ In the case that $\vec{r}' = \vec{r} - \vec{R}(t)$, if we
+ suppose that the axes of $S$ and $S'$ remain parallel and that
+ $t'=t$ (which is always the case classically):
+ $$\ddot{\vec{r}'} = \ddot{\vec{r}} - \ddot{\vec{R}}$$
+ So the equation of motion becomes:
+ $$m\ddot{\vec{r}'} = F - m\ddot{\vec{R}}$$
+ Note the appearance of a fictitious force, $-m\ddot{\vec{R}}$, which is due to the use of an accelerated frame and is proportional to the mass, as is the case for all fictitious forces.
 
-
+ % \item In the case $S'$ rotates with angular velocity $\vec{\omega}$ with respect to $S$, we consider the unit vectors. Assuming the frames coincide at $t = 0$:
+ %   $$\dot{\vec{r}} = \vec{v}' + \vec{\omega} \times \vec{r}'$$
+ 
 \subsection{Rotating frames}
+Suppose $S$ is an inertial frame, and $S'$ is a frame rotating about the $z$-axis with angular velocity $\omega = \dot{\theta}$ with respect to $S$.
+% define angular velocity vector?
+In order to understand motion in $S'$, we need to relate the basis vectors $\{\vec{e}_i\}$ and $\{\vec{e}'_i\}$ of $S$ and $S'$ respectively.
+
+Consider a particle at rest in $S'$. From the perspective of $S$, its velocity is
+$$\dot{\vec{r}} = \vec{\omega} \times \vec{r}$$
+where $\vec{\omega} = \omega \hat{\vec{z}}$ is the angular velocity vector (aligned with the rotation axis). This formula also applies to the basis vectors of $S'$.
+$$\dot{\vec{e}'_i} = \vec{\omega} \times \vec{e}'_i$$
+Given a time dependent vector $\vec{a}$, we can express it in the $\vec{e}'_i$ basis as follows:
+$$\vec{a} = a'_i(t) \vec{e}'_i$$
+From the perspective of $S'$, $\vec{e}'_i$ is constant and so
+$$\left(\dot{\vec{a}}\right)_{S'} = \dot{a'_i} \vec{e}'_i$$
+However, in $S'$, $\vec{e}'_i$ is not constant. We apply the product rule to obtain the time derivative of $\vec{a}$:
+$$\left(\dot{\vec{a}}\right)_S = \dot{a_i} \vec{e}'_i + a'_i \vec{\omega} \times \vec{e}'_i = \left(\dot{\vec{a}}\right)_{S'} + \vec{\omega} \times \vec{a}$$
+This identity applies to all vectors and can be written as an operator equation:
+\begin{prop}
+  If $S$ is an inertial frame, and $S'$ is rotating relative to $S$ with angular velocity $\vec{\omega}$, then
+  $$\left(\frac{\d}{\d t}\right)_S = \left(\frac{\d}{\d t}\right)_{S'} + \vec{\omega} \times$$
+\end{prop}
+
+We can apply this to the position vector twice to get:
+
 
 
 % TO DO:
